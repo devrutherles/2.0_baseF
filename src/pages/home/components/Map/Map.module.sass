@@ -1,0 +1,114 @@
+@import ../../../../styles/helpers.sass
+
+
+
+.label
+ background-color: #ffff
+ font-size: 12px 
+ padding: 3% 
+ margin: 3%
+ max-width: 200px
+ white-space: nowrap
+ display: flex
+ span
+ font-size: 10px
+ &:nth-child(1)
+  max-width: 200px
+
+
+
+.map_false
+
+  
+  display: flex
+  background-image: url('https://api.mapbox.com/styles/v1/rutherles/clhcoqnha008x01pecudrduj6/static/-40.3504,-20.3469,17,0/360x700@2x?access_token=pk.eyJ1IjoicnV0aGVybGVzIiwiYSI6ImNsaGF3bnJwMjBsY3kzZm4xcWYza3hka3cifQ.6Fz6MQnPiCgAUvTTyUd9mw')
+  position: absolute
+  z-index: 0
+  bottom: 50px
+  top: 0
+
+
+.static_false
+ 
+  display: none
+  
+
+.static
+
+  
+  display: flex
+  justify-content: center
+  align-items: center
+
+  position: absolute
+  z-index: 0
+  bottom: 50px
+  top: 0
+  img
+    object-fit: cover
+
+$bg-grad: radial-gradient(#080810 10%, #000001) // background gradient
+$lb: #276ef2 // light blue color
+$bxs: inset 0 0 200px
+
+=ab-center
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+=box($w, $h)
+  width: $w
+  height: $h
+
+.dot
+  +ab-center
+  +box(60px, 60px)
+  z-index: 3000
+  background: none
+
+.ping
+  width: 40vmin
+  height: 50vmin
+  +ab-center
+  box-shadow: $bxs rgba($lb, 0)
+  border: 4px solid rgba($lb, 0)
+  border-radius: 50%
+  animation: ping 3s ease infinite
+  z-index: 0
+  div
+   +ab-center
+   +box(60px, 60px)
+   z-index: 3
+   background: #2196f305
+   border-radius: 50%
+
+  .dot
+   width: 9px 
+   height: 9px
+   border-radius: 50% 
+   +ab-center 
+   background-color: $p1
+   position: absolute
+   z-index: 4
+   
+  
+
+
+.loc
+  width: 50px
+  height: 50px
+  border: 4px solid rgba($lb, 0)
+  border-radius: 50%
+  z-index: 2
+
+@keyframes ping
+  0%
+    +box(0px, 0px)
+    box-shadow: $bxs rgba($lb, .2)
+    border: 3px solid rgba($lb, .8)
+  60%
+    box-shadow: $bxs rgba($lb, .0)
+    border: 3px solid rgba($lb, .1)
+  90%
+    +box(50vmin, 50vmin)

@@ -1,0 +1,11 @@
+.icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.icon svg {
+  width: 20px;
+  height: 20px;
+  color: #6F767E !important;
+  fill: #6F767E !important;
+}/*# sourceMappingURL=Icons.module.css.map */

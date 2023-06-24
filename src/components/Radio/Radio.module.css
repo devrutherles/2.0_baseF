@@ -1,0 +1,63 @@
+.radio {
+  display: block;
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.input:checked + .inner .tick {
+  background: #3070F6;
+  border-color: #3070F6;
+}
+.input:checked + .inner .tick:before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.inner {
+  display: flex;
+}
+.inner:hover .tick {
+  border-color: #3070F6;
+}
+
+.tick {
+  position: relative;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid rgba(111, 118, 126, 0.4);
+  transition: all 0.2s;
+}
+.tick:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #FCFCFC;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25), inset 0px -1px 2px #DEDEDE;
+  transition: transform 0.2s;
+}
+
+.text {
+  flex-grow: 1;
+  padding-right: 16px;
+  line-height: 1.7142857143;
+  color: #1A1D1F;
+}
+:global(.dark-mode) .text {
+  color: #FCFCFC;
+}/*# sourceMappingURL=Radio.module.css.map */

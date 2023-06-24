@@ -1,0 +1,73 @@
+.container {
+  fill: #f7f8fa;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.button {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #FFFFFF;
+}
+.button svg {
+  color: #6F767E;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin-block: 5px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  padding: 5px;
+  justify-content: center;
+  background-color: #f7f8fa;
+}
+.icon svg {
+  font-size: 40px;
+  fill: #f7f8fa;
+}
+
+.contetn {
+  gap: 3px;
+  width: 80%;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+
+.text {
+  color: #33383F;
+  height: auto;
+  font-size: 18px;
+  font-style: Semibold;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 400;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.text1 {
+  color: #6F767E;
+  height: auto;
+  font-size: 14px;
+  font-style: Regular;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 300;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+  white-space: nowrap;
+}/*# sourceMappingURL=List.module.css.map */

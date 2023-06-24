@@ -1,0 +1,111 @@
+.field {
+  margin-bottom: 32px;
+}
+@media only screen and (max-width: 1259px) {
+  .field {
+    margin-bottom: 24px;
+  }
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.7142857143;
+  color: #33383F;
+}
+:global(.dark-mode) .label {
+  color: #EFEFEF;
+}
+
+.tooltip {
+  position: relative;
+  top: -1;
+}
+.tooltip svg {
+  fill: #9A9FA5;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -4px -16px 32px 0;
+}
+@media only screen and (max-width: 1259px) {
+  .list {
+    margin-bottom: 24px;
+  }
+}
+
+.checkbox {
+  flex: 0 0 calc(33.33% - 16px);
+  width: calc(33.33% - 16px);
+  margin: 16px 16px 0 0;
+}
+@media only screen and (max-width: 767px) {
+  .checkbox {
+    flex: 0 0 calc(50% - 16px);
+    width: calc(50% - 16px);
+  }
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.head .label {
+  margin-right: auto;
+}
+
+.counter {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.2307692308;
+  color: #9A9FA5;
+}
+.counter span {
+  color: #1A1D1F;
+}
+:global(.dark-mode) .counter span {
+  color: #FCFCFC;
+}
+.counter > .field:not(:last-child) {
+  margin-bottom: 32px;
+}
+@media only screen and (max-width: 1259px) {
+  .counter > .field:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+
+.info {
+  margin-right: auto;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.7142857143;
+  color: #33383F;
+}
+:global(.dark-mode) .info {
+  color: #EFEFEF;
+}
+
+.switch {
+  margin-left: 12px;
+}
+
+.fieldset {
+  display: flex;
+  margin: 0 -6px;
+}
+.fieldset .field {
+  flex: 0 0 calc(50% - 12px);
+  width: calc(50% - 12px);
+  margin: 0 6px;
+}
+.fieldset .label {
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 1.3333333333;
+  font-weight: 700;
+  color: #6F767E;
+}/*# sourceMappingURL=CategoryAndAttibutes.module.css.map */

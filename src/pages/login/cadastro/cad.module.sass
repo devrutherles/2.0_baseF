@@ -1,0 +1,202 @@
+@import ../../../styles/helpers
+
+.container
+    width: 100%
+    height: 100vh
+
+.signin
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+
+.image
+    width: 66%
+    height: 100%
+    display: flex
+    background: $n3
+    flex-direction: row
+    border-left: 0.5px solid $lightGray
+    background-image: url("https://painel.freteme.com/v1/storage/buckets/img/files/chatBg/view?project=643e4bf0bc8152ff08e5&mode=admin")
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    background-blend-mode: multiply
+    +md
+        display: none
+
+.form_container
+    width: 34%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background: $n
+    padding: 48px
+    +md
+        width: 100%
+        height: 100%
+        input:focus
+            .form_container
+                transform: translateY(-100%)
+    +ml
+        padding: 24px
+
+.form
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    background: $n
+    justify-content: space-around
+
+.form_logo
+    width: 100%
+    height: 10%
+    display: flex
+    justify-content: center
+    align-items: center
+    img
+        width: 30%
+        height: 60%
+        +md
+            height: 60%
+            width: 20%
+        +sm
+            height: 50%
+            width: 25%
+        +ml
+            height: 50%
+            width: 25%
+
+.login
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    input
+        width: 100%
+        height: 8%
+        margin: 12px 0px
+        padding: 12px
+        border: none
+        border-radius: 4px
+        background: #F2F2F2
+        color: $n8
+        font-size: $h7
+        &::placeholder
+            color: #808080
+            font-size: $h6
+            font-family: 'Roboto', sans-serif
+            font-weight: 400
+            line-height: 20px
+            letter-spacing: 0px
+            text-align: left
+
+    label
+        width: 100%
+        height: 5%
+        padding: 12px
+        color: #333333
+        font-size: $h7
+        font-family: 'SF Pro Display', sans-serif
+        font-weight: 400
+        line-height: 12px
+        letter-spacing: 0.30000001192092896px
+        text-align: left
+
+.divider
+    width: 100%
+    height: 1px
+    background: $lightGray
+    margin: 32px 0px
+
+.google
+    width: 100%
+    height: 8%
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    background: #333333
+    color: $n
+    font-size: $h7
+    border-radius: 10px
+    font-family: 'SF Pro Display', sans-serif
+    font-weight: 400
+    line-height: 20px
+    letter-spacing: 0.30000001192092896px
+    text-align: center
+    &:hover
+        background: $n
+        color: $n
+        cursor: pointer
+    img
+        height: 20px
+        width: 20px
+        margin-right: 12px
+
+.dont_cont
+    width: 100%
+    height: 5%
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    color: $n8
+    margin: 12px
+    +sm
+        height: 5%
+    +md
+        height: 5%
+    a
+        color: $primary
+        text-decoration: none
+        font-family: 'SF Pro Display', sans-serif
+        font-size: $h7
+        font-weight: 400
+        line-height: 20px
+        letter-spacing: 0.30000001192092896px
+        text-align: right
+
+        &:hover
+            text-decoration: underline
+    h1
+        font-size: $h7
+        font-family: 'SF Pro Display', sans-serif
+        font-weight: 400
+        line-height: 20px
+        letter-spacing: 0.30000001192092896px
+        text-align: left
+
+.signup
+    width: 100%
+    height: 15%
+    text-align: center
+    h1
+        font-size: $h7
+        margin: 12px
+        color: $p3
+
+.button
+    width: 100%
+    height: 60%
+    display: flex
+    justify-content: center
+    align-items: center
+    border: none
+    border-radius: 10px
+    background: $primary
+    color: $n
+    font-size: $h6
+    font-family: 'Roboto', sans-serif
+    font-weight: 700
+    line-height: 20px
+    letter-spacing: 0.30000001192092896px
+    text-align: center
+    &:hover
+        background: $n8
+        color: $n
+        cursor: pointer

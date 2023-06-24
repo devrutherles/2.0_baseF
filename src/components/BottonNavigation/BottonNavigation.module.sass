@@ -1,0 +1,124 @@
+@import ../../styles/helpers
+.tabs
+  display: flex
+  position: relative
+  background-color: #fff
+  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15)
+  padding: 0.65rem
+  border-radius: 99px
+
+  *
+    z-index: 2
+
+.container
+  width: 90%
+
+  input[type="radio"]
+    display: none
+    bottom: 0
+    margin-block-end: 2%
+
+.tab
+  
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 40px
+  width: calc( 100% / 3 - 10px )
+
+  color: black
+  font-weight: 500
+  border-radius: 99px
+  cursor: pointer
+  transition: color 0.15s ease-in
+  img
+    width: 40px
+    height: 40px
+    +s
+      width: 35px
+      height: 35px
+
+ 
+  
+  svg
+    font-size: 25px
+    
+    color: $n4
+    transition: transform 0.15s ease-in
+    +s
+    font-size: 22px
+
+  p
+    font-size: 0
+    padding: 0px
+    color: $n
+    transition: transform 0.15s ease-in
+
+.notification
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 20px
+  height: 20px
+  position: absolute
+  top: 4%
+  left: 47%
+  font-size: 11px
+  margin-left: 0.75rem
+  border-radius: 50%
+  margin: 0px
+  background-color: $p1
+  transition: 0.15s ease-in
+  color: $n
+
+.container input[type="radio"]:checked + label
+  display: flex
+  justify-content: center
+  gap: 10px
+  align-items: center
+  transition: 0.25s all linear
+  color: $n
+  img
+    width: 35px
+    height: 35px
+ 
+  svg
+    color: $n
+
+    
+  p
+   
+    color: $n
+    font-size: 7px
+    +s
+    font-size: 6px
+    
+    transform: scale(2)
+    
+
+.container input[type="radio"]:checked + label > .notification
+  display: none
+
+.container input[id="1"]:checked ~ .glider
+  transform: translateX(0)
+
+.container input[id="2"]:checked ~ .glider
+  transform: translateX(100%)
+  
+
+.container input[id="3"]:checked ~ .glider
+  transform: translateX(200%)
+
+.glider
+  position: absolute
+  display: flex
+  height: 40px
+  width: calc( 100% / 3 - 15px )
+  background-color: $p1
+  z-index: 1
+  border-radius: 99px
+  transition: 0.25s ease-out
+
+
+  
+ 

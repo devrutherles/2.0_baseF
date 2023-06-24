@@ -1,0 +1,86 @@
+@import ../../styles/helpers
+
+.tabs
+  display: flex
+  position: relative
+  flex-direction: row
+  justify-content: space-around
+
+  
+  border-radius: 99px
+
+  *
+    z-index: 2
+
+.container
+ width: 100%
+ input[type="radio"]
+  color: $n6
+  display: none
+
+
+.tab
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 30px
+  width: calc( 100% / 3 - 10px  )
+  font-size: 14px
+  color: $n5
+  font-weight: 500
+  border-radius: 99px
+  cursor: pointer
+  transition: color 0.15s ease-in
+  font-family: Roboto
+  border: 0.5px solid #f3f3f3
+
+
+
+.notification
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 5%
+  height: auto
+  position: absolute
+  top: 3%
+  left: 23%
+  font-size: 11px
+  margin-left: 0.75rem
+  border-radius: 50%
+  margin: 0px
+  background-color: #e6eef9
+  transition: 0.15s ease-in
+
+.container input[type="radio"]:checked + label
+  color: #fff
+  border: none
+
+
+.container input[type="radio"]:checked + label > .notification
+  background-color: #1d272f
+  color: #fff
+  margin: 0px
+  border: 0
+
+.container input[id="1"]:checked ~ .glider
+  transform: translateX(0)
+
+.container input[id="2"]:checked ~ .glider
+  transform: translateX(100%)
+
+.container input[id="3"]:checked ~ .glider
+  transform: translateX(200%)
+
+.glider
+  position: absolute
+  flex-direction: row
+  justify-content: space-around
+  display: flex
+  height: 30px
+  width: 20% 
+  background-color: #1d272f
+  z-index: 1
+  border-radius: 99px
+  transition: 0.25s ease-out
+

@@ -1,0 +1,244 @@
+@import ../../styles/helpers
+.card-container
+  width: 100%
+  justify-content: flex-start
+  overflow: hidden
+
+.master-container
+  width: 100%
+  display: flex
+  flex-direction: column
+  padding: 15px
+
+  gap: 5px
+
+.card
+  width: 100%
+  border-radius: 19px 19px 7px 7px
+  background: #FFFFFF
+  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15)
+
+.title
+  width: 100%
+  height: 40px
+  position: relative
+  display: flex
+  align-items: center
+  padding-left: 20px
+  border-bottom: 1px solid #efeff3
+  font-weight: 700
+  font-size: 14px
+  color: #63656b
+  background-color: #fff
+
+
+
+  
+
+
+.cart
+  width: 100%
+  border-radius: 19px 19px 7px 7px
+  background-color: #fff
+  background: #FFFFFF
+  
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1)
+
+
+
+  .products
+    display: flex
+    flex-direction: column
+    padding: 10px
+
+
+    .product
+      display: grid
+      grid-template-columns: 60px 1fr 0px 0fr
+      gap: 10px
+      align-items: center
+    
+
+    
+       
+
+      span
+        font-size: 16px
+        font-weight: 600
+        color: #47484b
+        margin-bottom: 8px
+        display: block
+
+      p
+        font-size: 14px
+        font-weight: 600
+        color: #7a7c81
+
+.quantity
+  height: 30px
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  margin: auto
+  background-color: #ffffff
+  border: 1px solid #e5e5e5
+  border-radius: 7px
+  filter: drop-shadow(0px 1px 0px #efefef) drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5))
+  label
+    width: 20px
+    height: 30px
+    display: flex
+    align-items: center
+    justify-content: center
+    padding-bottom: 2px
+    font-size: 15px
+    font-weight: 700
+    color: #47484b
+
+    button
+      width: 30px
+      height: 30px
+      display: flex
+      align-items: center
+      justify-content: center
+      border: 0
+      outline: none
+      background-color: transparent
+      padding-bottom: 2px
+
+.price-small
+  font-size: 15px
+  margin: 0 0 auto auto
+  position: relative
+  color: #2B2B2F
+  font-weight: 900
+
+.card-coupons
+  border-radius: 10px 10px 7px 7px
+  background-color: #fff
+  
+  width: 100%
+
+.form
+  display: flex
+  flex-direction: row
+  width: 100%
+  justify-content: center
+  align-items: center
+ 
+
+
+
+.card-checkout
+  border-radius: 10px 10px 7px 7px
+  width: 100%
+  background-color: #fff
+  filter: drop-shadow( 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15))
+
+  .details
+    display: grid
+    grid-template-columns: 3fr 1fr
+    padding: 10px
+    gap: 5px
+
+    span
+      font-size: 13px
+      font-weight: 600
+
+      &:nth-child(odd)
+        font-size: 11px
+        font-weight: 700
+        color: #707175
+        margin: auto auto auto 0
+
+      &:nth-child(even)
+        font-size: 13px
+        font-weight: 600
+        color: #47484b
+        margin: auto 0 auto auto
+
+  .checkout--footer
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 10px 10px 10px 20px
+    background-color: #efeff3
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15)
+
+.price
+  position: relative
+  font-size: 22px
+  color: #2B2B2F
+  font-weight: 900
+
+  sup
+    font-size: 13px
+
+  sub
+    width: fit-content
+    position: absolute
+    font-size: 11px
+    color: #5F5D6B
+    bottom: 5px
+    display: inline-block
+
+.checkout-btn
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  width: 150px
+  height: 36px
+  background: linear-gradient(180deg, #4480FF 0%, #115DFC 50%, #0550ED 100%)
+  box-shadow: 0px 0.5px 0.5px #EFEFEF, 0px 1px 0.5px rgba(239, 239, 239, 0.5)
+  border-radius: 7px
+  border: 0
+  outline: none
+  color: #ffffff
+  font-size: 13px
+  font-weight: 600
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1)
+.icon
+ svg
+   font-size: 20px
+   color: $n4
+
+.helpers
+  width: 70vw
+  height: 70px
+  display: flex
+  flex-direction: row
+  margin-block-start: 13px
+  justify-content: space-between
+  background: #FFFFFF
+  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15)
+  align-items: center
+  border-radius: 20px
+  padding-inline: 20px
+
+
+#ad
+   
+  width: 15vw
+  height: 15vh
+
+  margin-block-start: 30px
+    
+  background: #e7e7e7
+   
+  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15)
+  
+
+#remove
+  margin-block-start: 30px
+  height: 15vh
+  width: 15vw
+  
+    
+  background: #898989
+  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15)
+
+.slider
+  width: 30vw
+  justify-content: center
+  align-items: center
+    

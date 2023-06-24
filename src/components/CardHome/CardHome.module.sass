@@ -1,0 +1,246 @@
+@import ../../styles/helpers
+
+@keyframes backColor
+  0%
+
+
+    transform: translateY(25px)
+
+  100%
+   
+    transform: translateY(-10px)
+
+.card
+
+  min-height: 250px
+  height: auto
+  width: 100%
+
+  z-index: 30
+  transition: 0.3s all linear
+  
+
+.card[data-isopen='true'] 
+  min-height: 315px
+   
+ 
+
+
+
+
+.notifications
+  position: absolute
+  width: 100%
+  display: flex
+  padding-block-end: 16px
+
+  z-index: -300
+
+  height: auto
+  
+
+  
+
+  top: -75px
+  background-color: $p1
+  transition: 0.3s all linear
+
+.notifications[data-isopen='true']
+  transform: translateY(60px)
+
+
+.small
+  transition: 0.3s all linear
+  display: flex
+
+  justify-content: flex-start
+  align-items: flex-start
+  flex-direction: row
+  margin-right: auto
+
+  background-color: $p1
+  width: 100%
+
+  flex-basis: 10px
+
+  span
+    transition: 0.3s all linear
+    font-size: 14px
+    font-weight: 400
+    transform: translateY(-20px)
+    color: $n
+    flex-grow: 10
+    opacity: 0
+
+.small[data-isopen='true']
+  flex-basis: 20px
+  span
+    opacity: 1
+
+    transform: translateY(2px)
+
+.btn_1
+  width: 100px
+  color: $p1
+  background: $n
+  border-radius: 40px
+  height: 30px
+  font-family: Roboto
+  font-weight: 600
+
+.div_content
+
+  height: 10px
+  border-radius: 26px 26px 0px 0px
+  width: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  border-block-color: $n
+  padding: 0
+  bottom: -1px
+  left: 0
+  right: 0
+  position: absolute
+  flex-direction: column
+  background: #FFFFFF
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1)
+
+.services
+  display: flex
+  //background-color: $p1
+
+  flex-direction: column
+  justify-content: space-between
+  width: auto
+  height: auto
+  background: none
+
+  position: relative
+  padding: 0px 10px 0px 10px
+
+.header_card2
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+  align-items: flex-end
+  gap: 10px
+  transition: 0.3s all linear
+
+  width: 100%
+  color: $n
+  span
+    +title1-g
+
+  p
+    font-size: 16px
+    letter-spacing: 1.1px
+    font-weight: 400
+    color: $n
+    line-height: 20px
+    font-family: Roboto
+
+.card_services
+  padding: 16px 0px 4px 0px
+
+.block
+  
+  display: flex
+  flex-direction: row
+  align-items: flex-end
+  padding: 16px
+  
+
+  justify-content: flex-end
+  align-self: flex-end
+  justify-self: flex-end
+
+.btn
+  background-color: $n
+
+  color: $p1
+  border-radius: 40px
+  width: 25vw
+  height: 35px
+
+  font-size: 16px
+  display: flex
+  justify-content: space-around
+  align-items: center
+  font-weight: 500
+  flex-direction: row
+  svg
+    color: $p1
+    font-size: 18px
+
+.close
+  display: flex
+  align-self: flex-end
+  flex-grow: 1
+  justify-content: flex-start
+  margin-block-end: 3px
+
+  button
+    align-self: flex-start
+    border-radius: 50px
+    width: 18px
+    height: 18px
+
+    padding: 5px
+    justify-content: center
+    align-items: center
+    border: 1px solid $n
+  svg
+    color: $n
+
+    font-size: 14px
+
+.tab
+  transition: 0.3s all linear
+  display: flex
+  height: 50%
+  width: 100%
+  justify-content: center
+  align-items: flex-end
+  position: relative
+  bottom: 0px
+  left: 0
+  right: 0
+  z-index: 200
+
+  opacity: 1
+  background-color: $n
+
+.tab[data-isopen='true']
+  transform: translateY(80px)
+  display: none
+  
+
+
+.container
+
+  width: 100%
+  flex-basis: 100%
+  height: 80px
+
+
+  z-index: 5
+
+ 
+
+.header
+  width: 100%
+  position: absolute
+  height: 50px
+  background: $n
+  border-radius: 15px 15px 0px 0px
+  display: flex
+  bottom: 100%
+  right: 0
+  left: 0
+  z-index: 2
+
+
+
+
+

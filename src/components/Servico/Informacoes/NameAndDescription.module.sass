@@ -1,0 +1,62 @@
+@import ../../../styles/helpers
+
+.description
+    & > .field
+        &:not(:last-child)
+            margin-bottom: 32px
+            +d
+                margin-bottom: 24px
+
+.editor
+    &:not(:last-child)
+        margin-bottom: 32px
+        +d
+            margin-bottom: 24px
+
+.group
+    display: flex
+    flex-wrap: wrap
+    align-items: flex-end
+    margin: 0 -6px -12px
+    +m
+        display: block
+        margin: 0
+    .field
+        flex: 0 0 calc(50% - 12px)
+        width: calc(50% - 12px)
+        margin: 0 6px 12px
+        +m
+            width: 100%
+            margin: 12px 0 0
+
+.price
+    & > .field
+        &:not(:last-child)
+            margin-bottom: 32px
+            +d
+                margin-bottom: 24px
+
+.line
+    display: flex
+    align-items: center
+    margin-bottom: 16px
+    padding-bottom: 16px
+    border-bottom: 1px solid $n3
+    +dark
+        border-color: $n6
+
+.info
+    margin-right: auto
+    +base2
+    color: $n5
+    +dark
+        color: $n3
+
+.tooltip
+    position: relative
+    top: -1
+    svg
+        fill: $shades1
+
+.switch
+    margin-left: 12px

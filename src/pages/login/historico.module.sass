@@ -1,0 +1,319 @@
+@import ../../styles/helpers
+
+.container
+    width: 100%
+    height: 100vh
+
+.signin
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+
+.image
+    width: 66%
+    height: 100%
+    display: flex
+    background: $n3
+    flex-direction: row
+    border-left: 0.5px solid $lightGray
+    background-image: url("https://painel.freteme.com/v1/storage/buckets/img/files/chatBg/view?project=643e4bf0bc8152ff08e5&mode=admin")
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center
+    background-blend-mode: multiply
+    +md
+        display: none
+    +md
+        display: none
+
+.form_container
+    width: 34%
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background: $n
+    padding: 48px
+    +md
+        width: 100%
+        height: 100%
+        input:focus
+            .form_container
+                transform: translateY(-100%)
+    +ml
+        padding: 24px
+
+.form
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    background: $n
+    justify-content: space-around
+
+.form_logo
+    width: 100%
+    height: 10%
+    display: flex
+    justify-content: center
+    align-items: center
+    img
+        width: 30%
+        height: 60%
+        +md
+            height: 60%
+            width: 20%
+        +sm
+            height: 50%
+            width: 25%
+        +ml
+            height: 50%
+            width: 25%
+
+.form_title
+    width: 100%
+    height: 10%
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    h1
+        font-size: $h2
+        color: $n8
+        font-family: Poppins
+        font-size: 20px
+        font-weight: 600
+        line-height: 28px
+        letter-spacing: 0px
+        text-align: left
+
+.login
+    display: flex
+    flex-direction: column
+    input
+        height: 8%
+        margin: 12px 0px
+        padding: 12px
+        border: none
+        border-radius: 4px
+        background: #F2F2F2
+        color: $n8
+        font-size: $h7
+        &::placeholder
+            color: #808080
+            font-size: $h6
+            font-family: 'Roboto', sans-serif
+            font-weight: 400
+            line-height: 20px
+            letter-spacing: 0px
+            text-align: left
+    label
+        height: 5%
+        padding: 12px
+        color: #333333
+        font-size: $h7
+        font-family: 'SF Pro Display', sans-serif
+        font-weight: 400
+        line-height: 12px
+        letter-spacing: 0.30000001192092896px
+        text-align: left
+
+.row_remember
+    width: 100%
+    height: 15%
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    align-items: center
+
+.check
+    width: 50%
+    height: 100%
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    input
+        width: 12px
+        height: 12px
+        border: 1px solid $n8
+        border-radius: 2px
+        background: $n
+        &:focus
+            outline: none
+            border: 1px solid $n3
+    label
+        display: flex
+        align-items: center
+        color: $n8
+        font-size: $h7
+        font-family: 'SF Pro Display', sans-serif
+        font-weight: 400
+        line-height: 20px
+        letter-spacing: 0.30000001192092896px
+        text-align: left
+
+.remember
+    width: 50%
+    height: 100%
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+    align-items: center
+    a
+        display: flex
+        align-items: center
+        color: $n8
+        font-size: $h7
+        text-decoration: none
+        font-family: 'SF Pro Display', sans-serif
+        font-weight: 400
+        line-height: 20px
+        letter-spacing: 0.30000001192092896px
+        text-align: right
+        &:hover
+            text-decoration: underline
+
+.divider
+    width: 100%
+    height: 1px
+    background: $lightGray
+    margin: 32px 0px
+
+.google
+    width: 100%
+    height: 8%
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    background: #333333
+    color: $n
+    font-size: $h7
+    border-radius: 10px
+    font-family: 'SF Pro Display', sans-serif
+    font-weight: 400
+    line-height: 20px
+    letter-spacing: 0.30000001192092896px
+    text-align: center
+    &:hover
+        background: $n
+        color: $n
+        cursor: pointer
+    img
+        height: 20px
+        width: 20px
+        margin-right: 12px
+
+.dont_cont
+    width: 100%
+    height: 10%
+    display: flex
+    flex-direction: row
+    justify-content: space-around
+    color: $n8
+    margin: auto
+    +sm
+        height: 5%
+    +md
+        height: 5%
+    a
+        color: $primary
+        text-decoration: none
+        font-family: 'SF Pro Display', sans-serif
+        font-size: $h7
+        font-weight: 400
+        line-height: 20px
+        letter-spacing: 0.30000001192092896px
+        text-align: right
+
+        &:hover
+            text-decoration: underline
+    h1
+        font-size: $h7
+        font-family: 'SF Pro Display', sans-serif
+        font-weight: 400
+        line-height: 20px
+        letter-spacing: 0.30000001192092896px
+        text-align: left
+
+.signup
+    width: 100%
+    height: 17%
+    text-align: center
+    h1
+        font-size: $h7
+        margin: 12px
+        color: $p3
+
+.button
+    width: 100%
+    height: 50%
+    display: flex
+    justify-content: center
+    align-items: center
+    border: none
+    border-radius: 10px
+    background: $primary
+    color: $n
+    font-size: $h6
+    font-family: 'Roboto', sans-serif
+    font-weight: 700
+    line-height: 20px
+    letter-spacing: 0.30000001192092896px
+    text-align: center
+    &:hover
+        background: $n8
+        color: $n
+        cursor: pointer
+
+.loader
+    width: 80%
+    height: 80%
+
+.circular
+    animation: rotate 2s linear infinite
+    height: 100%
+    transform-origin: center center
+    width: 50%
+
+.path
+    stroke-dasharray: 1,200
+    stroke-dashoffset: 0
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite
+    stroke-linecap: round
+    stroke: #4285f4
+
+@keyframes rotate
+    100%
+        transform: rotate(360deg)
+
+@keyframes dash
+    0%
+        stroke-dasharray: 1,200
+        stroke-dashoffset: 0
+
+    50%
+        stroke-dasharray: 89,200
+        stroke-dashoffset: -35px
+
+    100%
+        stroke-dasharray: 89,200
+        stroke-dashoffset: -124px
+
+@keyframes color
+    0%
+        stroke: #ffffff
+
+    40%
+        stroke: #e77f7a
+
+    66%
+        stroke: #f3d16e
+
+    80%, 90%
+        stroke: #0b3a17

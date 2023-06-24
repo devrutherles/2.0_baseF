@@ -1,0 +1,186 @@
+@import ../../styles/helpers
+
+.card_details
+  border-radius: 16px
+  background: #FFFFFF
+
+  
+  gap: 10px
+  
+  
+  height: auto
+  width: 100%
+  display: flex
+  flex-direction: column
+  align-self: center
+
+
+
+.row_details
+  display: flex
+  flex-direction: row
+  width: 100%
+  padding: 5px 5px 4px 5px
+  gap: 3%
+
+  border: 1px solid $n3
+  align-items: center
+  
+  border-radius: 10px
+  justify-content: flex-start
+  min-height: 40px
+  height: auto
+  svg
+    font-size: 18px
+
+  input[type='radio']
+    display: none
+
+  input[type='checkbox']
+    margin-inline: 3%
+    display: none
+
+  input[type='checkbox'] + label
+    border: 1px solid $n3
+    border-radius: 10px
+    padding: 2px 8px 2px 8px
+    margin-inline: 3%
+    font-size: 14px
+    font-weight: 400
+
+    color: #606060
+    font-family: "IBM Plex Sans"
+  input[type='checkbox']:checked + label
+    border: 1px solid $p2
+    border-radius: 10px
+    background-color: $p2
+
+    color: $n
+
+  input[type='radio']  + label
+    border: 1px solid $n3
+    border-radius: 10px
+    padding: 2px 8px 2px 8px
+    margin-inline: 2%
+    font-size: 14px
+    font-weight: 400
+    transition: 0.25s all linear
+
+    color: #606060
+    font-family: "IBM Plex Sans"
+
+  input[type='radio']:checked + label
+    background-color: #1d272f
+    color: $n1
+
+  input[type='text']
+    display: flex
+   
+    border-radius: 10px
+    
+   
+    width: 100%
+    font-size: 14px
+    text-align: left
+    font-weight: 400
+    color: #606060
+    font-family: "IBM Plex Sans"
+
+    &:focus
+
+      &::placeholder
+        opacity: 0.0
+        padding: 0px 0px 0px 0px
+
+.label
+  width: 100%
+  display: flex
+  flex-direction: row
+  
+
+  p
+    font-size: 14px
+    font-weight: 400
+    transition: 0.25s all linear
+
+    color: #606060
+    font-family: "IBM Plex Sans"
+    padding: 5px 5px 4px 5px
+
+.icon
+  width: 10%
+  display: flex
+  justify-content: center
+  color: $p1
+
+.soma
+  width: 20%
+  display: flex
+  justify-content: center
+
+.btn_soma
+  display: flex
+  flex-direction: row
+  border-radius: 32px
+  justify-content: space-around
+  background: #FFFFFF
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2)
+  backdrop-filter: blur(0.5px)
+  padding: 5%
+  width: 100%
+  
+
+  button
+    border-radius: 10px
+    transition: 0.25s all linear
+
+
+    &:active
+      background-color: $n4
+
+.location
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: stretch
+  &_content
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    gap: 3%
+    width: 100%
+    padding: 5px 5px 4px 5px
+
+    border: 1px solid $n3
+    align-items: center
+   
+    border-radius: 10px
+    justify-content: flex-start
+    height: auto
+
+  &_icon
+    width: 10%
+    height: auto
+    display: flex
+    flex-direction: column
+
+  &_destination
+
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+  
+    width: 100%
+    align-items: flex-end
+  input
+    font-size: 14px
+
+    color: #606060
+    font-family: "IBM Plex Sans"
+  button
+    background-color: $p1
+    border-radius: 10px
+    width: 40%
+    padding: 3%
+    color: $n1

@@ -1,0 +1,296 @@
+.container {
+  width: 90%;
+  height: auto;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  padding-top: 8px;
+  flex-direction: column;
+  border-radius: 32px;
+  background-color: #ffffff;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+.header {
+  gap: 10px;
+  width: 100%;
+  height: 66px;
+  display: flex;
+  padding: 24px 10px;
+  align-items: center;
+  flex-shrink: 0;
+  border-color: rgb(222, 222, 222);
+  border-style: solid;
+  border-width: 0 0 1px;
+  border-radius: 20px 20px 0 0;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+}
+
+.img-container {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-service {
+  width: 40%;
+  height: auto;
+  padding: 10px;
+}
+
+.price-container {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-color: rgb(222, 222, 222);
+  border-style: solid;
+  border-width: 0 0 1px;
+  -webkit-padding-after: 20px;
+          padding-block-end: 20px;
+}
+
+.coll {
+  flex: 0 0 auto;
+  width: 55%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.roll {
+  gap: 5%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.roll svg {
+  font-size: 26px;
+  color: #33383F;
+}
+.roll h3 {
+  font-style: normal;
+  font-weight: 590;
+  font-size: 16px;
+  line-height: 29px;
+  font-family: Roboto;
+  color: #1A1D1F;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.roll1 {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.roll1 span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 29px;
+}
+
+.coll1 {
+  flex: 0 0 auto;
+  width: 193px;
+  display: flex;
+  align-self: center;
+  align-items: flex-start;
+  padding-left: 12px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn {
+  gap: 32px;
+  width: 80%;
+  border: 2px dashed rgba(120, 120, 120, 0.4);
+  height: 50%;
+  display: flex;
+  padding: 12px;
+  box-shadow: 0px 4px 16px 0px rgba(119, 119, 119, 0.25);
+  align-items: center;
+  border-radius: 100px;
+  background-color: rgb(255, 255, 255);
+}
+
+.container2 {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 137px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 16px;
+}
+
+.container3 {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border-color: rgb(222, 222, 222);
+  border-width: 1px 0 0 0;
+  justify-content: space-between;
+}
+
+.frame20 {
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5%;
+}
+.frame20 svg {
+  font-size: 33px;
+}
+.frame20 span {
+  color: #1A1D1F;
+}
+
+.icon2 {
+  width: 24px;
+  height: 24px;
+}
+
+.container4 {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  justify-content: flex-start;
+  gap: 5%;
+  width: 100%;
+  border-radius: 32px;
+}
+
+.frame18 {
+  gap: 10px;
+  width: 80% z;
+  height: 60px;
+  display: flex;
+  padding: 24px 10px;
+  align-self: stretch;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  padding-right: 24px 10px;
+  justify-content: center;
+  background-color: rgb(0, 0, 0);
+}
+
+.text4 {
+  color: rgb(244, 244, 244);
+  height: auto;
+  font-size: 20px;
+  font-style: Bold;
+  text-align: left;
+  font-family: SF Pro;
+  font-weight: 700;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+
+.containerBotton {
+  display: flex;
+  flex-direction: row;
+  width: 33%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.15), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+  padding: 0.75rem;
+  border-radius: 99px;
+}
+
+.frame281-button1 {
+  border-radius: 22px;
+  width: 25px;
+  justify-content: center;
+  height: 35px;
+  display: flex;
+  align-items: center;
+}
+.frame281-button1:active {
+  background-color: #6F767E;
+  transition: all 0.8s linear;
+}
+
+.solicitar {
+  background-color: #111315;
+  height: 100%;
+  justify-content: center;
+  color: #FFFFFF;
+  width: 80%;
+  font-size: 14px;
+}
+
+.hors {
+  width: 33%;
+  box-shadow: 0 0 1px 0 rgba(255, 255, 255, 0.15), 0 6px 12px 0 rgba(254, 254, 254, 0.15);
+  border: solid 1px #6F767E;
+}
+.hors button {
+  background: none;
+}
+
+.tel {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5%;
+  height: 40px;
+  border-radius: 16px;
+  padding: 3% 0% 3% 3%;
+  background-color: #F4F4F4;
+}
+.tel input {
+  width: 70%;
+  background-color: #F4F4F4;
+}
+.tel svg {
+  font-size: 20px;
+  color: #1A1D1F;
+}
+
+.btnGroup {
+  width: 100%;
+}
+.btnGroup div {
+  align-items: center;
+  justify-content: center;
+}
+
+.pay {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5%;
+  height: 40px;
+  padding: 3% 0% 3% 3%;
+  border: 1px solid #F3F3F3;
+  border-radius: 12px;
+}
+.pay input {
+  width: 24px;
+  height: 24px;
+}/*# sourceMappingURL=Service.module.css.map */

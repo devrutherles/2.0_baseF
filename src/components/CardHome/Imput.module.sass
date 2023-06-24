@@ -1,0 +1,300 @@
+@import ../../styles/helpers.sass
+
+.container
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: center
+  height: auto
+  gap: 5px
+  transition: 3s all linear
+  margin-block-end: 20px
+
+  width: 100%
+  position: relative
+  z-index: 3
+ 
+
+
+.history
+  width: 100%
+  height: auto
+.divider
+  background-color: #D5DDE0
+  height: 5px
+  display: flex
+  width: 50px
+  align-self: center
+  margin: 2%
+  border-radius: 10%
+  box-shadow: 0px 4px 15px rgb(202 202 202 / 30%)
+
+.tab
+  width: 100%
+  padding-block-start: 3%
+
+.card
+  border-top-left-radius: 32px
+  border-top-right-radius: 32px
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+  background-color: #ffffff
+  width: 100%
+  padding: 6px 10px 0px 10px
+
+  &--header
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    padding: 5px
+
+    gap: 2px
+    width: 100%
+
+.media
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
+  gap: 1px
+  width: 100%
+
+  &--body
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+    gap: 16px
+
+.avatar
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
+
+.img-1
+  border-radius: 80px
+  height: 60px
+  width: 60px
+
+.media--content
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+  gap: 4.8px
+
+.text-2
+  text-align: left
+  vertical-align: top
+  font-size: 20px
+  font-family: Roboto
+  line-height: auto
+  color: #000000
+
+.text-3
+  text-align: left
+  vertical-align: top
+  font-size: 14px
+  font-family: Roboto
+  letter-spacing: .8px
+  line-height: 40.8px
+  color: #78858f
+
+.message
+
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  gap: 1.6px
+
+  svg
+    font-size: 25px
+    color: $n4
+
+.icon--message
+  height: 15px
+  width: 15px
+
+.input--origem
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  padding-block-start: 3px
+  width: 100%
+
+.address--conteiner-origem
+  height: auto
+  width: 90%
+  padding: 15px
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
+  gap: 10%
+  background: #FFFFFF
+  box-shadow: 0px 4px 15px rgb(202 202 202 / 30%)
+  border-radius: 15px
+
+.svgorigin--destino
+  height: 50px
+  width: 20px
+  align-self: center
+  justify-self: flex-end
+.address
+  width: 80%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: flex-start
+  gap: 3px
+  input
+    width: 100%
+    font-family: Roboto
+    font-style: normal
+    font-weight: 400
+    font-size: 15px
+    line-height: 136%
+
+    color: #3E4958
+
+.location-list
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+  gap: 10px
+  width: 100%
+  padding-block-start: 2%
+  transition: 3s all linear
+
+.row-list
+  display: flex
+  flex-direction: row
+  justify-content: stretch
+  align-items: center
+  transition:  3s all linear
+
+  padding: 10px
+  gap: 10px
+
+  width: 100%
+
+.place-svg
+  height: 30px
+  width: 30px
+  color: $n1
+  svg
+    height: 30px
+    width: 30px
+    color: $n1
+
+.col-list
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: flex-start
+
+.text-1-list
+  text-align: left
+  vertical-align: start
+  font-size: 16px
+  font-family: Roboto
+  line-height: 20px
+  font-weight: 500
+  color: $n1
+
+.text-2-list
+  text-align: left
+  vertical-align: top
+  font-size: 14px
+  font-family: Roboto
+  line-height: 20px
+  font-weight: 500
+  color: $n2
+
+#rig
+  align-self: center
+  justify-self: center
+
+.list
+  transition: 0.3s all linear
+  opacity: 1
+  justify-content: center
+  display: flex
+  flex-direction: row
+  align-items: center
+  width: 100%
+  position: relative
+
+  z-index: -1000000000
+
+
+.list[data-isopen='true']
+  opacity: 1
+  
+
+.origin
+  display: flex
+  width: 95%
+  align-items: center
+  justify-content: space-around
+
+  flex-direction: row
+
+  border: 1px $n3 solid
+  border-radius: 10px
+  padding: 10px 10px 10px 10px
+  background-color: #f7f8fa
+  
+  input
+    width: 100%
+    height: 35px
+    padding: 5px 10px 5px 10px
+    background-color: #f7f8fa
+    font-weight: 400
+    font-size: 16px
+    font-family: Robto,sans-serif
+    color: $n5
+    letter-spacing: 1.3
+    
+    
+
+  img
+
+    width: 35px
+    height: 35px
+
+.coll_input
+  display: flex
+  flex-direction: column
+  width: 100%
+  gap: 10px
+  background-color: $n
+  position: relative
+  transition: 3s all linear
+  align-items: center
+
+.row
+  
+  transition: 3s all linear
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  width: 100%
+  height: auto
+  align-items: center
+  gap: 3%
+  &::first-child
+    width: 20px
+    height: 20px
+
+  img
+    width: 25px
+    height: 100%

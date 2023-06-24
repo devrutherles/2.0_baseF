@@ -1,0 +1,7 @@
+[class^=visible] {
+  visibility: visible !important;
+}
+
+.visible-false {
+  visibility: hidden !important;
+}/*# sourceMappingURL=visible.css.map */

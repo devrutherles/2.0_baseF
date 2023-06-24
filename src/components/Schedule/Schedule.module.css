@@ -1,0 +1,107 @@
+.title {
+  padding-right: 48px;
+}
+
+.note {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #EFEFEF;
+  font-weight: 500;
+  color: #6F767E;
+}
+:global(.dark-mode) .note {
+  border-color: #272B30;
+}
+
+.list {
+  margin-top: 24px;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.date {
+  padding: 24px 12px;
+}
+@media only screen and (max-width: 1259px) {
+  .date {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.foot {
+  margin: 4px 8px 0;
+  padding-top: 24px;
+  border-top: 1px solid #EFEFEF;
+  text-align: right;
+}
+:global(.dark-mode) .foot {
+  border-color: #272B30;
+}
+
+.foot .button:not(:last-child) {
+  margin-right: 8px;
+}
+
+.time {
+  width: 280px;
+  padding: 24px;
+}
+@media only screen and (max-width: 1259px) {
+  .time {
+    width: 100%;
+  }
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 23px;
+  border-bottom: 1px solid #EFEFEF;
+}
+:global(.dark-mode) .top {
+  border-color: #272B30;
+}
+
+.subtitle {
+  margin-right: auto;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: -0.02em;
+}
+@media only screen and (max-width: 767px) {
+  .subtitle {
+    font-size: 18px;
+  }
+}
+
+.close {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #EFEFEF;
+  font-size: 0;
+}
+.close svg {
+  fill: #33383F;
+  transition: transform 0.2s;
+}
+:global(.dark-mode) .close {
+  background: #272B30;
+}
+:global(.dark-mode) .close svg {
+  fill: #FCFCFC;
+}
+
+.close:hover svg {
+  transform: rotate(90deg);
+}
+
+.btns {
+  margin-top: 24px;
+  text-align: right;
+}/*# sourceMappingURL=Schedule.module.css.map */
