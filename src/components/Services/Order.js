@@ -9,27 +9,28 @@ import { ArrowLeft } from "@mui/icons-material";
 import { useServer } from "../../server/server";
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import { useEffect, useState } from "react";
+import { Box, Text } from "native-base";
 const Servico = (props) => {
-const { app, handleApp, handleService, service, config } = props
-const {createServico,getAccount} = useServer()
-const [user,setUser]= useState(null)
+  const { app, handleApp, handleService, service, config } = props
+  const { createServico, getAccount } = useServer()
+  const [user, setUser] = useState(null)
 
 
 
 
 
-const handleUser = async ()=>{
+  const handleUser = async () => {
 
-  const newUser =  await getAccount()
+    const newUser = await getAccount()
 
-  return newUser
- 
-}
+    return newUser
+
+  }
 
 
- 
- 
- const newService =   () => {
+
+
+  const newService = () => {
 
     const data = {
       status: 'Pendente',
@@ -47,7 +48,7 @@ const handleUser = async ()=>{
       details: '',
       encodedRoute: service.encodedRoute,
       number: '',
-      reference:'',
+      reference: '',
       monters: '',
       helpers: service.helpers,
       hours: service.hours,
@@ -70,7 +71,7 @@ const handleUser = async ()=>{
   }
 
   const serviceId = config.find((item) => item.id == id)
- 
+
 
 
   return (
@@ -79,31 +80,10 @@ const handleUser = async ()=>{
       <ServicesCard handleService={handleService} createService={createService} service={service} app={app} handleApp={handleApp} config={serviceId} />
 
 
-      <CardDetails1 handleService={handleService} createService={createService} service={service} app={app} handleApp={handleApp} />
+      <Box w='100%' h={'50px'} backgroundColor={'red'}>
+        <Text>teste</Text>
+      </Box>
 
-      <CardDetail2 handleService={handleService} createService={createService} service={service} app={app} handleApp={handleApp}  />
-
-
-
-      <div className={styles.footer}>
-
-        <div className={styles.content}>
-
-          <IconButton onClick={() => handleApp(
-            {
-              ...app,
-              step: 2
-            })}>
-            <KeyboardBackspaceIcon />
-          </IconButton>
-
-        </div>
-
-        <div className={styles.button}>
-          <Button onClick={()=>newService()}>Finalizar</Button>
-        </div>
-
-      </div>
 
 
 

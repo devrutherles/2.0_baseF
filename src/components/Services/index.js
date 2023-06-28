@@ -40,25 +40,6 @@ const Servico = (props) => {
 
 
 
-      <div className={styles.footer}>
-
-        <div className={styles.content}>
-        
-         <IconButton onClick={()=> handleApp(
-          {
-          ...app,
-          step: 1
-        })}>
-          <KeyboardBackspaceIcon/>
-          </IconButton>
-
-        </div>
-
-        <div className={styles.button}>
-          <Button>Escolha o serviço</Button>
-        </div>
-
-      </div>
 
     </div>
 

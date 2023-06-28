@@ -9,7 +9,7 @@ import styles from "./Map/Map.module.sass";
 import { Marker } from "react-map-gl";
 
 const Puck = (props) => {
-const {longitude,latitude} = props
+const {latitude,longitude} = props
 
 
   return ( 

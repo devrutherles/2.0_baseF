@@ -10,6 +10,7 @@ import useHandleService from "../../hooks/useService";
 import { toName } from "../../libs/utils";
 import getMylocation from "../../utils/getMylocation";
 import CardHome from "../../components/CardHome";
+import {Box, Container} from 'native-base'
 
 const Index = () => {
   const dispatch = useDispatch();
@@ -98,7 +99,9 @@ const Index = () => {
   const handleClose = () => handleApp({ isOpen: false, step: 1 });
 
   return (
-    <div onLoad={handleLoad} className={styles["home"]}>
+
+    <Container>
+      <div onLoad={handleLoad} className={styles["home"]}>
       <div ref={divRef} className={styles.map}>
         <Map
           cardHeight={cardHeight}
@@ -132,7 +135,9 @@ const Index = () => {
           step={app.step}
         />
       </div>
-    </div>
+      </div>
+    </Container>
+   
   );
 };
 

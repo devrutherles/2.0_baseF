@@ -1,14 +1,13 @@
 @import ../../styles/helpers
 
-@keyframes backColor
+@keyframes list
   0%
 
-
-    transform: translateY(25px)
+    height: calc( 100% / 2 )
 
   100%
-   
-    transform: translateY(-10px)
+
+    height: 100%
 
 .card
 
@@ -17,16 +16,7 @@
   width: 100%
 
   z-index: 30
-  transition: 0.3s all linear
-  
-
-.card[data-isopen='true'] 
-  min-height: 315px
-   
- 
-
-
-
+  overflow: hidden
 
 .notifications
   position: absolute
@@ -37,9 +27,6 @@
   z-index: -300
 
   height: auto
-  
-
-  
 
   top: -75px
   background-color: $p1
@@ -47,7 +34,6 @@
 
 .notifications[data-isopen='true']
   transform: translateY(60px)
-
 
 .small
   transition: 0.3s all linear
@@ -144,12 +130,11 @@
   padding: 16px 0px 4px 0px
 
 .block
-  
+
   display: flex
   flex-direction: row
   align-items: flex-end
   padding: 16px
-  
 
   justify-content: flex-end
   align-self: flex-end
@@ -214,8 +199,6 @@
 .tab[data-isopen='true']
   transform: translateY(80px)
   display: none
-  
-
 
 .container
 
@@ -223,10 +206,7 @@
   flex-basis: 100%
   height: 80px
 
-
   z-index: 5
-
- 
 
 .header
   width: 100%
@@ -240,7 +220,89 @@
   left: 0
   z-index: 2
 
+.divider
+  justify-self: center
+  align-self: center
+  width: 35px
+  height: 5px
+  border-radius: 2px
+  background-color: #d7d7d7
+  margin-block: 5px
+
+.my-transition-enter
+  opacity: 0
+  transform: scale(0.8)
+
+.my-transition-enter-active
+  opacity: 1
+  transform: scale(1)
+  transition: opacity 300ms, transform 300ms
+
+.my-transition-exit
+  opacity: 1
+  transform: scale(1)
+
+.my-transition-exit-active
+  opacity: 0
+  transform: scale(0.8)
+  transition: opacity 300ms, transform 300ms
+
+.list
+  height: 200px
+  transition: all .35s linear
+
+.list[data-isopen='true']
+  height: 370px
+
+.step_3
+  transition: all .35s linear
+  height: auto !important
+
+.step_2
+  transition: all .35s linear
+  height: auto !important
 
 
 
 
+.footer
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
+
+  gap: 3%
+  height: auto
+  padding: 16px
+
+  background: #fff
+  border-radius: 0px 0px 20px 20px
+  padding-block: 15px
+
+.button
+  display: flex
+  width: 90%
+
+  button
+    background-color: $p1
+    color: $n
+    width: 100%
+    height: 50px
+    border-radius: 16px
+    font-size: 16px
+
+.content_footer
+
+  width: 20%
+  align-items: center
+
+  button
+    width: 100%
+    height: 50%
+    border: 1px solid $p1
+    border-radius: 10px
+
+  svg
+
+    font-size: 30px
+    color: $p1

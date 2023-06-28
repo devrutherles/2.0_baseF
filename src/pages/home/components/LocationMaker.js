@@ -11,7 +11,7 @@ import { Marker } from "react-map-gl";
 const LocationMaker =  (props) => {
 
 
-const { destination, label , longitude,latitude} = props;
+const { destination, label , longitude, latitude} = props;
 
 
 
@@ -39,7 +39,7 @@ const { destination, label , longitude,latitude} = props;
         </span>
       )}
       anchor={FLOATING_MARKER_ANCHOR_POSITIONS.bottomRight}
-       anchorType={destination ? FLOATING_MARKER_ANCHOR_TYPES.square : FLOATING_MARKER_ANCHOR_TYPES.circle }
+      anchorType={destination ? FLOATING_MARKER_ANCHOR_TYPES.square : FLOATING_MARKER_ANCHOR_TYPES.circle }
      
     />
     </Marker>

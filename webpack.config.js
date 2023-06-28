@@ -1,28 +1,32 @@
-const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
-    configureWebpack: {
-      plugins: [
-        new webpack.ProvidePlugin({
-          Buffer: ['buffer', 'Buffer'],
-        }),
-        new webpack.ProvidePlugin({
-            process: 'process/browser',
-        }),
-  
-      ],
-      resolve: {
-        fallback: {
-          "os": require.resolve("os-browserify/browser"),
-          "url": require.resolve("url/"),
-          "crypto": require.resolve("crypto-browserify"),
-          "https": require.resolve("https-browserify"),
-          "http": require.resolve("stream-http"),
-          "assert": require.resolve("assert/"),
-          "stream": require.resolve("stream-browserify"),
-          "buffer": require.resolve("buffer"),
-          "path" : require.resolve("path-browserify")
-        }
-      }
-    },
+  devServer: {
+    compress: true,
+    hot: true, // ativa o recarregamento automático
+    port: 3000,
+  },
+  module: {
+    rules: [
+      {
+        contentBase: path.join(__dirname, 'dist'),
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
+      {
+        test: /\.sass$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ],
+      },
+    ],
+  },
 };

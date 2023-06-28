@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import Image from "../../components/Imagem";
 import List from "../List";
@@ -8,9 +8,43 @@ import History from "../History";
 import GetRouter from "../../utils/getRouter";
 
 import style from "./Imput.module.sass";
+import { CSSTransition } from 'react-transition-group';
+
+
+
+
+async function storageHistory(objeto) {
+
+
+
+  let arraySalvo = localStorage.getItem('history');
+  if (arraySalvo && arraySalvo.length > 3) return;
+
+  let novoArray = [];
+
+  if (arraySalvo) {
+
+    novoArray = JSON.parse(arraySalvo);
+  }
+
+  const objetoExistente = novoArray.find(item => JSON.stringify(item) === JSON.stringify(objeto));
+
+  if (!objetoExistente) {
+
+    novoArray.push(objeto);
+
+    localStorage.setItem('history', JSON.stringify(novoArray));
+  }
+}
+
+
 
 const OriginDestination = (props) => {
   const [value, setValue] = React.useState("");
+
+
+
+
 
   const { handleService, service, app, handleApp } = props;
   const { location } = service;
@@ -19,13 +53,18 @@ const OriginDestination = (props) => {
   const DestinationRef = useRef(null);
   const lat = location ? location[1] : null;
   const lng = location ? location[0] : null;
+
   const [locationInput, setLocationInput] = useState({
+
     valueOrigin: service.originPlace || "",
+
     placeOrigin: "",
     valueDestination: service.destinationPlace || "",
     placeDestination: "",
-    foco: false,
+    focus: false,
     id: null,
+
+
   });
 
   const [locationList, setLocationList] = useState({
@@ -33,6 +72,12 @@ const OriginDestination = (props) => {
     isOpen: false,
     inputType: "",
   });
+
+
+
+
+
+
 
   const handleSetOrigem = async (data) => {
     if (locationInput.id === "origin") {
@@ -47,11 +92,25 @@ const OriginDestination = (props) => {
           data.properties.coordinates.longitude,
           data.properties.coordinates.latitude,
         ],
-        latitude: data.properties.coordinates.longitude,
-        longitude: data.properties.coordinates.latitude,
+        latitude: data.properties.coordinates.latitude,
+        longitude: data.properties.coordinates.longitude,
         type: 'origin'
-        
+
       });
+
+
+      storageHistory({
+
+        place: data.properties.name,
+        location: [
+          data.properties.coordinates.longitude,
+          data.properties.coordinates.latitude,
+        ],
+        latitude: data.properties.coordinates.latitude,
+        longitude: data.properties.coordinates.longitude,
+        type: 'origin'
+      })
+
 
       setLocationList({
         ...locationList,
@@ -76,18 +135,39 @@ const OriginDestination = (props) => {
           data.properties.coordinates.longitude,
           data.properties.coordinates.latitude,
         ],
-        latitude: data.properties.coordinates.longitude,
-        longitude: data.properties.coordinates.latitude,
+        latitude: data.properties.coordinates.latitude,
+        longitude: data.properties.coordinates.longitude,
         type: 'destination'
-       
+
       });
 
-      if(app.step == 1){
 
-      handleApp({
-      step: 2
-      });
-    }
+
+      storageHistory(
+        {
+
+          place: data.properties.name,
+          location: [
+            data.properties.coordinates.longitude,
+            data.properties.coordinates.latitude,
+          ],
+          latitude: data.properties.coordinates.latitude,
+          longitude: data.properties.coordinates.longitude,
+          type: 'destination'
+
+
+        })
+
+
+
+
+
+      if (app.step == 1) {
+
+        handleApp({
+          step: 2
+        });
+      }
     }
   };
 
@@ -113,7 +193,7 @@ const OriginDestination = (props) => {
 
     if (!app.isOpen) {
       handleApp({
-    
+
         isOpen: true
       });
     }
@@ -156,6 +236,7 @@ const OriginDestination = (props) => {
               onChange={(e) => handleInputChange(e.target)}
               value={locationInput.valueOrigin || ""}
               ref={OriginRef}
+
               type="text"
             />
             <Image alt="" src={require("../../images/calendar.svg")} />
@@ -177,32 +258,53 @@ const OriginDestination = (props) => {
                 onChange={(e) => handleInputChange(e.target)}
                 value={locationInput.valueDestination || ""}
                 ref={DestinationRef}
+
                 type="text"
               />
             </div>
           )}
 
-          {!service.destination && (
+          {!service.origin && (
             <History
+              handleService={handleService}
+              service={service}
               lestIcon={false}
               text={"Sem endereço salvo"}
               label={"Recentes"}
               icon={require("../../images/hours.svg")}
+              setLocationInput={setLocationInput}
+              locationInput={locationInput}
             />
           )}
         </div>
       </div>
 
       {locationList.list.map((item, key) => (
-        <div key={key} className={style.list}>
-          <List
-            handleSetOrigem={handleSetOrigem}
-            suggestion={item}
-            icon={require("../../images/pin.svg")}
-            input={locationInput.id}
-          />
-        </div>
-      ))}
+      
+
+          <div key={key} data-isopen={app.isOpen} className={style.list}>
+
+
+
+
+
+            <List
+              handleSetOrigem={handleSetOrigem}
+              suggestion={item}
+              icon={require("../../images/pin.svg")}
+              input={locationInput.id}
+            />
+
+
+
+          </div>
+
+
+      )
+
+
+
+      )}
     </div>
   );
 };

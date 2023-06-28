@@ -5,41 +5,82 @@ import Image from "../../components/Imagem";
 
 
 export default function RenderRow(props) {
+  const { icon, label, text, lestIcon, handleService, locationInput, setLocationInput, service } = props
 
-  const { icon, label, text , lestIcon} = props
+  const history = JSON.parse(localStorage.getItem('history')) || false
+
+
+  console.log(locationInput)
+
+
+
 
   return (
 
 
+    <>
+
+      {history && history?.map((item) =>
 
 
 
-     <div className={styles['container']}>
+
+        <div onClick={() => {
+          if (!history) return
 
 
-      <div className={styles['icon']}>
-      <Image alt='' src={icon}/>
-      </div>
+          handleService({
+            ...service,
+            originPlace: item.place,
+            origin: item.location,
+            type: 'origin'
+          })
+
+          setLocationInput({
+            ...locationInput,
+            valueOrigin: item.place
+
+          })
+        }
 
 
-      <div className={styles['contetn']}>
-        <span className={styles['text']}>{label}</span>
-        <span className={styles['text1']}>{text}</span>
-       </div>
 
 
-    { lestIcon && (  <div className={styles.button}>
-        <ChevronRightOutlined />
-      </div>)
+
+
+
+
+
+        } className={styles['container']}>
+
+
+          <div className={styles['icon']}>
+            <Image alt='' src={icon} />
+          </div>
+
+
+          <div className={styles['contetn']}>
+            <span className={styles['text']}>{item.place || label}</span>
+            <span className={styles['text1']}>{'historico'}</span>
+          </div>
+
+
+          {lestIcon && (<div className={styles.button}>
+            <ChevronRightOutlined />
+          </div>)
+          }
+
+        </div>
+
+
+
+      )
+
+
+
       }
 
-    </div>
 
-
-
-
-
-
-
+    </>
   );
 }

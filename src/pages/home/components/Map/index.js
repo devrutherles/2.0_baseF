@@ -1,31 +1,18 @@
 import React, { useEffect, useState, useMemo } from "react";
-
-import ReactMapGL, { GeolocateControl } from "react-map-gl";
-
+import getDistance from "../../../../utils/getDistance";
 import LocationMaker from "../LocationMaker";
 import Puck from "../Puck";
+import {layerStyle} from '../layerStyle'
+import ReactMapGL, {
+  Marker,
+  GeolocateControl,
+  Source,
+  Layer,
+  
+} from "react-map-gl";
+import getRouterJson from "../../../../utils/getRouterJson";
 
-const layerStyle = {
-  id: "route",
-  type: "line",
-  layout: {
-    "line-join": "round",
-    "line-cap": "round",
-  },
-  paint: {
-    "line-color": "#2b85ff",
-    "line-opacity": 0.8,
-    "line-width": {
-      base: 1,
-      stops: [
-        [12, 4],
-        [22, 15],
-        [32, 25],
-      ],
-    },
-    "line-blur": 0.5,
-  },
-};
+
 
 const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
 
@@ -36,9 +23,8 @@ const localDefaut = {
 
 function Map(props) {
   const { handleService, service, app, cardHeight } = props;
-  const [routeGeoJSON, setRouteGeoJSON] = useState(null);
-
-  const [status, setStatus] = useState(null);
+  const [geoJson,setGeoJson] = useState(null) 
+  const [routeGeoJSON, setRouteGeoJSON] = useState(null)
   const {
     location,
     origin,
@@ -50,86 +36,114 @@ function Map(props) {
     longitude,
   } = service;
 
-  const [local, setLocal] = useState({
-    latitude: localDefaut.latitude,
-    longitude: localDefaut.longitude,
-  });
-
-  const [size, setSize] = useState({
-    height: "100%",
-    width: "100%",
-    zoom: 15.9,
-    padding: 20,
-  });
-
   const [viewport, setViewport] = useState({
     latitude: localDefaut.latitude,
     longitude: localDefaut.longitude,
+    height: "100%",
+    width: "100%",
+    zoom: 15.9
   });
 
-  function neWlocal(latitude, longitude) {
 
-    setViewport({
-      latitude: latitude,
-      longitude: longitude,
-    });
-    
+  const getgeoJson = async () => {
+  const geoJson = await getDistance(origin,destination)
+  const newViewport =  await getRouterJson(geoJson,cardHeight)
+  setGeoJson(geoJson)
+
+  setViewport({
+    ...viewport,
+    ...newViewport
+  });
+
+ 
+
   }
 
-  console.log(service);
+console.log(service)
 
   useEffect(() => {
-    neWlocal(latitude, longitude);
+
+
+
+  if (type == 'destination') {
+
+    getgeoJson()
+
+   
+
+   }
+
+ 
+   setViewport({
+    ...viewport,
+    latitude:latitude,
+    longitude:longitude
+  });
 
     return () => {
-      neWlocal({
+      setViewport({
+        ...viewport,
         latitude: localDefaut.latitude,
         longitude: localDefaut.longitude,
       });
     };
-  }, [latitude, longitude]);
+  }, [latitude,longitude]);
+
+
 
   const renderMarkers = useMemo(() => {
-    return (
-      <>
-        {type == "location" && (
-          <Puck latitude={location[1]} longitude={location[0]} />
-        )}
+    if (type === "location") {
+      return <Puck latitude={latitude} longitude={longitude} />;
+    } else if (type === "origin") {
+      return (
+        <LocationMaker
+          destination={false}
+          latitude={latitude}
+          longitude={longitude}
+          label={originPlace}
+        />
+      );
+    } else if (type === "destination") {
+      return (
 
-        {type && type == "origin" && (
-          <LocationMaker
-            destination={false}
-            latitude={origin[1]}
-            longitude={origin[0]}
-            label={originPlace}
-          />
-        )}
+        <>
+        <LocationMaker
+          destination={true}
+          label={destinationPlace}
+          latitude={destination[1]}
+          longitude={destination[0]}
+        />
 
-        {type == "destination" && (
-          <LocationMaker
-            destination={true}
-            label={destinationPlace}
-            latitude={destination[1]}
-            longitude={longitude[0]}
-          />
-        )}
+        <LocationMaker
+        destination={false}
+        latitude={origin[1]}
+        longitude={origin[0]}
+        label={originPlace}
+      />
       </>
-    );
-  }, [latitude, longitude]);
+      );
+    } else {
+      return null;
+    }
+  }, [origin,destination,location]);
 
   return (
     <ReactMapGL
       {...viewport}
-      {...size}
       mapboxAccessToken={MAPBOX_TOKEN}
       mapStyle="mapbox://styles/rutherles/clijbpqac00ni01qh0c2i6b5w"
       onViewportChange={setViewport}
     >
-      <GeolocateControl />
-
       {renderMarkers}
+
+      {service.origin && service.destination && geoJson && (
+          <Source id="route" type="geojson" data={geoJson}>
+            <Layer {...layerStyle} />
+          </Source>
+        )}
+      <GeolocateControl />
     </ReactMapGL>
   );
 }
 
-export default React.memo(Map);
+export default React.memo(Map) ;
